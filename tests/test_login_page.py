@@ -27,6 +27,7 @@ class TestLoginPage:
         login = LoginPage(page)
         login.open()
         login.login(invalid_user["email"], invalid_user["password"])
+	page.wait_for_timeout(2000)
         assert login.is_login_error_visible(), "Error message not shown for invalid login"
 
     def test_invalid_login_error_message_text(self, page, invalid_user):
