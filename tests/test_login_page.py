@@ -23,12 +23,11 @@ class TestLoginPage:
         assert "Automation Exercise" in title, f"Unexpected title: {title}"
 
     def test_invalid_login_shows_error(self, page, invalid_user):
-        """TC-009: Verify error message shown for invalid credentials"""
-        login = LoginPage(page)
-        login.open()
-        login.login(invalid_user["email"], invalid_user["password"])
-	page.wait_for_timeout(2000)
-        assert login.is_login_error_visible(), "Error message not shown for invalid login"
+    	login = LoginPage(page)
+    	login.open()
+    	login.login(invalid_user["email"], invalid_user["password"])
+    	page.wait_for_timeout(2000)
+    	assert login.is_login_error_visible(), "Error message not shown for invalid login"
 
     def test_invalid_login_error_message_text(self, page, invalid_user):
         """TC-010: Verify exact error message text for invalid login"""
