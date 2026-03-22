@@ -13,7 +13,7 @@ class HomePage(BasePage):
     LOGO             = "img[alt='Website for automation practice']"
     SIGNUP_LOGIN_BTN = "a[href='/login']"
     PRODUCTS_BTN     = "a[href='/products']"
-    CART_BTN         = "a[href='/view_cart']"
+    CART_BTN         = "a[href='/view_cart']>>nth=0"
     HOME_BTN         = "a[href='/']"
     CONSENT_BTN      = "p.fc-button-label"
 

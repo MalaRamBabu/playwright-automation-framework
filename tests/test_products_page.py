@@ -58,12 +58,12 @@ class TestProductsPage:
         assert keyword_found, f"No results match keyword: {keyword}"
 
     def test_search_partial_keyword_returns_results(self, page, search_terms):
-        """TC-021: Verify partial keyword search returns results"""
-        products = ProductsPage(page)
-        products.open()
-        products.search_product(search_terms["partial"])
-        count = products.get_product_count()
-        assert count > 0, f"No results for partial keyword: {search_terms['partial']}"
+    	products = ProductsPage(page)
+    	products.open()
+    	products.search_product(search_terms["partial"])
+    	page.wait_for_timeout(2000)
+    	count = products.get_product_count()
+    	assert count > 0, f"No results for partial keyword: {search_terms['partial']}"
 
     def test_navigate_to_products_from_home(self, page):
         """TC-022: Verify navigation to products page from home"""
